@@ -51,7 +51,7 @@ export PO_API=yyyyyyyyyyyyyyyyyyyyyyyyyyyyyy
 export PG_CONN='postgres://passdb_user:passdb_pass@localhost/passdb'
 
 #macos postgres want this string instead
-export PG_CONN='postgres://passdb_user:passdb_pass@localhost/passdb?ssl_mode=disabled'
+export PG_CONN='postgres://passdb_user:passdb_pass@localhost/passdb?sslmode=disable'
 
 # seed the
 ./seeder test_data.tar.gz
