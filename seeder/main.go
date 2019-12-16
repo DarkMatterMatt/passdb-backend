@@ -253,7 +253,7 @@ func processAndSave(wg *sync.WaitGroup, db *sql.DB, lineText string) {
 func upsert(db *sql.DB, user, domain, password string) error {
 	tx, err := db.Begin()
 	if err != nil {
-		tx.Rollback()
+		log.Fatalf("Failed starting database transaction: %s", err.Error())
 		return err
 	}
 
