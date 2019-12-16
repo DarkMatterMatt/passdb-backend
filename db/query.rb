@@ -5,5 +5,5 @@ require_relative 'database'
 require_relative '../models'
 
 ActiveRecord::Base.logger = Logger.new(STDOUT)
-binding.pry
 puts 'Begin Query Interface'
+binding.pry
