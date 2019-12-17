@@ -46,8 +46,9 @@ const (
 			(select username_id from ins1), 
 			(select pass_id from ins2), 
 			(select domain_id from ins3) 
-		)`
-)
+		)
+		ON CONFLICT (username_id, password_id, domain_id) DO NOTHING
+`)
 
 var (
 	finished map[string]bool
