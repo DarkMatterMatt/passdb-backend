@@ -153,7 +153,8 @@ func main() {
 				ch chan string,
 				lim *limiter.ConcurrencyLimiter,
 			) {
-				for line := range ch {
+				for _line := range ch {
+					line := _line
 					lim.Execute(func() {
 						processAndSave(wgi, dbi, line)
 					})
