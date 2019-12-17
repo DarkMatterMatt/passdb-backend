@@ -198,7 +198,7 @@ func intQuery(db *sql.DB, query string) (int, error) {
 }
 
 func count(db *sql.DB) int {
-	num, _ := intQuery(db, "SELECT nextval('total')")
+	num, _ := intQuery(db, "SELECT last_value FROM total")
 	return num
 }
 
